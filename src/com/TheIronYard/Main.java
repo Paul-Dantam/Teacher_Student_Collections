@@ -4,9 +4,6 @@ import java.util.*;
 
 public class Main {
 
-
-    private Set ;
-
     public static void main(String[] args) {
 
         ArrayList<Student> studentList = new ArrayList<>();
@@ -44,32 +41,18 @@ public class Main {
         studentSet3.add(studentList.get(14));
 
         HashMap<Teacher, Set> teacherMap = new HashMap<>();
-
-
-
         teacherMap.put(teacherList.get(0), studentSet1);
         teacherMap.put(teacherList.get(1), studentSet2);
         teacherMap.put(teacherList.get(2), studentSet3);
 
-
-
-
-
-
-
-
-
-
         for(Teacher teacher : teacherMap.keySet()) {
-            System.out.println(teacher.getFirstName()+" "+teacher.getLastName());
+            System.out.println(teacher.getFirstName() + " " + teacher.getLastName());
         }
 
-        for(Set studentSet: teacherMap.values()) {
-            System.out.println(studentSet);
-        }
-
-
-
-
+            for (Set studentSet : teacherMap.values()) {
+                for ( Student s : (HashSet<Student>) studentSet){
+                    System.out.println(s.getFirstName() + " " + s.getLastName());
+                }
+            }
     }
 }
